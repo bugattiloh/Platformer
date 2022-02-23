@@ -69,7 +69,7 @@ public class Hero : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (_isGrounded)
         {
