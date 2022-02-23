@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class Hero : MonoBehaviour
@@ -16,15 +12,18 @@ public class Hero : MonoBehaviour
 
     public enum States
     {
-        idle = 0,
-        run = 1
+        Idle = 0,
+        Run = 1,
+        Jump = 2,
     }
+
 
     private States State
     {
-        get { return (States)_animator.GetInteger("state"); }
+        get { return (States) _animator.GetInteger("state"); }
         set { _animator.SetInteger("state", (int) value); }
     }
+
 
     private void Awake()
     {
@@ -34,7 +33,7 @@ public class Hero : MonoBehaviour
     }
 
 
-    private bool GetFlipX(Vector3 direction)
+    private bool ShouldFlipX(ref Vector3 direction)
     {
         if (direction.x < 0.0f)
         {
@@ -46,15 +45,14 @@ public class Hero : MonoBehaviour
 
     private void Run()
     {
-        
         Vector3 direction = transform.right * Input.GetAxis("Horizontal");
         Vector3 currentPos = transform.position;
         Vector3 targetPos = currentPos + direction;
 
-        _spriteRenderer.flipX = GetFlipX(direction);
+        _spriteRenderer.flipX = ShouldFlipX(ref direction);
         if (_isGrounded)
         {
-            State = States.run;
+            State = States.Run;
         }
 
         transform.position = Vector3.MoveTowards(currentPos, targetPos, speed * Time.deltaTime);
@@ -73,8 +71,9 @@ public class Hero : MonoBehaviour
     {
         if (_isGrounded)
         {
-            State = States.idle;
+            State = States.Idle;
         }
+
         if (Input.GetButton("Horizontal"))
         {
             Run();
@@ -101,6 +100,7 @@ public class Hero : MonoBehaviour
         else
         {
             _isGrounded = false;
+            State = States.Jump;
         }
     }
 }
