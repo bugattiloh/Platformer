@@ -6,6 +6,7 @@ public class Hero : MonoBehaviour
     [SerializeField] private float jumpForce = 0.1f;
     private bool _isGrounded;
 
+
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
@@ -32,15 +33,27 @@ public class Hero : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
     }
 
-
-    private bool ShouldFlipX(ref Vector3 direction)
+    private void Update()
     {
-        if (direction.x < 0.0f)
+        if (_isGrounded)
         {
-            return true;
+            State = States.Idle;
         }
 
-        return false;
+        if (Input.GetButton("Horizontal"))
+        {
+            Run();
+        }
+
+        if (Input.GetButtonDown("Jump") && _isGrounded)
+        {
+            Jump();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        CheckGround();
     }
 
     private void Run()
@@ -60,40 +73,13 @@ public class Hero : MonoBehaviour
 
     private void Jump()
     {
-        if (_isGrounded)
-        {
-            _rigidBody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        }
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        if (_isGrounded)
-        {
-            State = States.Idle;
-        }
-
-        if (Input.GetButton("Horizontal"))
-        {
-            Run();
-        }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            Jump();
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        CheckGround();
+        _rigidBody.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
     }
 
     private void CheckGround()
     {
-        Collider2D[] colliiders = Physics2D.OverlapCircleAll(transform.position, 1f);
-        if (colliiders.Length > 1)
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.9f);
+        if (colliders.Length > 1)
         {
             _isGrounded = true;
         }
@@ -102,5 +88,15 @@ public class Hero : MonoBehaviour
             _isGrounded = false;
             State = States.Jump;
         }
+    }
+
+    private bool ShouldFlipX(ref Vector3 direction)
+    {
+        if (direction.x < 0.0f)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
