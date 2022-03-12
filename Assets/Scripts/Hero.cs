@@ -4,9 +4,9 @@ public class Hero : MonoBehaviour
 {
     [SerializeField] private float speed = 3f;
     [SerializeField] private float jumpForce = 0.1f;
-    
+
     private bool _isGrounded;
-    
+
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
