@@ -15,7 +15,7 @@ public class CameraScript : MonoBehaviour {
         FindPlayer(faceLeft);
     }
 
-    public void FindPlayer(bool playerFaceLeft)
+    private void FindPlayer(bool playerFaceLeft)
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _lastX = Mathf.RoundToInt(_player.position.x);
