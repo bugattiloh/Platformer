@@ -2,14 +2,19 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
-    [SerializeField] private float speed = 3f;
-    [SerializeField] private float jumpForce = 0.1f;
+    [SerializeField] private float speed = 4f;
+    [SerializeField] private float jumpForce = 15f;
 
     private bool _isGrounded;
 
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
+    
+    public Transform GroundCheck;
+    public float checkRadius = 0.5f;
+    public LayerMask Ground;
+    
 
     public enum States
     {
@@ -31,6 +36,7 @@ public class Hero : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _animator = GetComponentInChildren<Animator>();
+        
     }
 
     private void Update()
@@ -78,17 +84,13 @@ public class Hero : MonoBehaviour
 
     private void CheckGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.9f);
-        if (colliders.Length > 1)
+        _isGrounded = Physics2D.OverlapCircle(GroundCheck.position, checkRadius, Ground);
+        if (!_isGrounded)
         {
-            _isGrounded = true;
-        }
-        else
-        {
-            _isGrounded = false;
             State = States.Jump;
         }
     }
+    
 
     private bool ShouldFlipX(ref Vector3 direction)
     {
