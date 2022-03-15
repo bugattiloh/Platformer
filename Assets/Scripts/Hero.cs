@@ -27,7 +27,7 @@ public class Hero : MonoBehaviour
     private States State
     {
         get { return (States) _animator.GetInteger("state"); }
-        set { _animator.SetInteger("state", (int) value); }
+        set => _animator.SetInteger("state", (int) value);
     }
 
 
@@ -67,7 +67,7 @@ public class Hero : MonoBehaviour
         Vector3 direction = transform.right * Input.GetAxis("Horizontal");
         Vector3 currentPos = transform.position;
         Vector3 targetPos = currentPos + direction;
-
+        
         _spriteRenderer.flipX = ShouldFlipX(ref direction);
         if (_isGrounded)
         {
