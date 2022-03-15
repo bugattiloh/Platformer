@@ -1,19 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishingChestScript : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
-    void Start()
+    private Animator _anim;
+
+
+    private enum States
     {
-        
+        Idle = 0,
+        Finish =1,
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private States State
     {
-        
+        get => (States) _anim.GetInteger("state");
+        set => _anim.SetInteger("state", (int) value);
+    }
+
+
+
+    private void Awake()
+    {
+        _anim = GetComponentInChildren<Animator>();
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            State = States.Finish;
+            _anim.Play("");
+        }
+     
     }
 }

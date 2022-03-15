@@ -11,7 +11,7 @@ public class CoinController : MonoBehaviour
 
     public Text scoreCounter;
 
-    public void AddCoin()
+    private void AddCoin()
     {
         score++;
         scoreCounter.text = score.ToString();
