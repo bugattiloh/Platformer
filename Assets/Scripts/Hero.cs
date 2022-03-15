@@ -10,13 +10,13 @@ public class Hero : MonoBehaviour
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
-    
+
     public Transform GroundCheck;
     public float checkRadius = 0.5f;
     public LayerMask Ground;
-    
 
-    public enum States
+
+    private enum States
     {
         Idle = 0,
         Run = 1,
@@ -26,7 +26,7 @@ public class Hero : MonoBehaviour
 
     private States State
     {
-        get { return (States) _animator.GetInteger("state"); }
+        get => (States) _animator.GetInteger("state");
         set => _animator.SetInteger("state", (int) value);
     }
 
@@ -36,7 +36,6 @@ public class Hero : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _animator = GetComponentInChildren<Animator>();
-        
     }
 
     private void Update()
@@ -67,7 +66,7 @@ public class Hero : MonoBehaviour
         Vector3 direction = transform.right * Input.GetAxis("Horizontal");
         Vector3 currentPos = transform.position;
         Vector3 targetPos = currentPos + direction;
-        
+
         _spriteRenderer.flipX = ShouldFlipX(ref direction);
         if (_isGrounded)
         {
@@ -90,7 +89,7 @@ public class Hero : MonoBehaviour
             State = States.Jump;
         }
     }
-    
+
 
     private bool ShouldFlipX(ref Vector3 direction)
     {

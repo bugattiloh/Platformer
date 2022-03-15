@@ -21,11 +21,13 @@ public class CameraScript : MonoBehaviour {
         _lastX = Mathf.RoundToInt(_player.position.x);
         if(playerFaceLeft)
         {
-            transform.position = new Vector3(_player.position.x - offset.x, _player.position.y + offset.y, transform.position.z);
+            var position = _player.position;
+            transform.position = new Vector3(position.x - offset.x, position.y + offset.y, transform.position.z);
         }
         else
         {
-            transform.position = new Vector3(_player.position.x + offset.x, _player.position.y + offset.y, transform.position.z);
+            var position = _player.position;
+            transform.position = new Vector3(position.x + offset.x, position.y + offset.y, transform.position.z);
         }
     }
 
@@ -40,11 +42,13 @@ public class CameraScript : MonoBehaviour {
             Vector3 target;
             if(faceLeft)
             {
-                target = new Vector3(_player.position.x - offset.x, _player.position.y + offset.y, transform.position.z);
+                var position = _player.position;
+                target = new Vector3(position.x - offset.x, position.y + offset.y, transform.position.z);
             }
             else
             {
-                target = new Vector3(_player.position.x + offset.x, _player.position.y + offset.y, transform.position.z);
+                var position = _player.position;
+                target = new Vector3(position.x + offset.x, position.y + offset.y, transform.position.z);
             }
             Vector3 currentPosition = Vector3.Lerp(transform.position, target, damping * Time.deltaTime);
             transform.position = currentPosition;
