@@ -25,6 +25,7 @@ public class FinishingChestScript : MonoBehaviour
 
     private void Awake()
     {
+        State = States.Idle;
         _anim = GetComponentInChildren<Animator>();
     }
 
@@ -33,7 +34,6 @@ public class FinishingChestScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             State = States.Finish;
-            _anim.Play("");
         }
      
     }
