@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damping: 2
-  offset: {x: 3, y: 2}
+  offset: {x: 3, y: 3}
   faceLeft: 0
 --- !u!20 &519420031
 Camera:
@@ -3762,9 +3762,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1598821070998947065, guid: 5e365a781d068ad4f9c6e6e674e9dedd, type: 3}
+      propertyPath: m_Size.x
+      value: 0.59675217
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598821070998947065, guid: 5e365a781d068ad4f9c6e6e674e9dedd, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7428462
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598821070998947065, guid: 5e365a781d068ad4f9c6e6e674e9dedd, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0049829483
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598821070998947065, guid: 5e365a781d068ad4f9c6e6e674e9dedd, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.022298127
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094573574003341733, guid: 5e365a781d068ad4f9c6e6e674e9dedd, type: 3}
+      propertyPath: jumpForce
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5508633680198364267, guid: 5e365a781d068ad4f9c6e6e674e9dedd, type: 3}
       propertyPath: m_Name
       value: Hero
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183316655486568162, guid: 5e365a781d068ad4f9c6e6e674e9dedd, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183316655486568162, guid: 5e365a781d068ad4f9c6e6e674e9dedd, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8434488897707820913, guid: 5e365a781d068ad4f9c6e6e674e9dedd, type: 3}
       propertyPath: m_RootOrder
