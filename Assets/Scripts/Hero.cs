@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
-    [SerializeField] private float speed = 4f;
+    [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 15f;
 
     private bool _isGrounded;
@@ -12,7 +12,7 @@ public class Hero : MonoBehaviour
     private Animator _animator;
 
     public Transform GroundCheck;
-    public float checkRadius = 0.5f;
+    public float checkRadius = 0.15f;
     public LayerMask Ground;
 
 
