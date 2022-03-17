@@ -2,39 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class FinishingChestScript : MonoBehaviour
 {
-    private Animator _anim;
-
-
-    private enum States
-    {
-        Idle = 0,
-        Finish =1,
-    }
-
-
-    private States State
-    {
-        get => (States) _anim.GetInteger("state");
-        set => _anim.SetInteger("state", (int) value);
-    }
-
-
+    public Animator animator;
 
     private void Awake()
     {
-        State = States.Idle;
-        _anim = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!collision.CompareTag("Player"))
         {
-            State = States.Finish;
+            animator.SetBool("finish", true);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-     
     }
 }
