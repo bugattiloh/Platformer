@@ -16,18 +16,16 @@ public class LevelManager : MonoBehaviour
     {
         levelsOpened = PlayerPrefs.GetInt("levels", 1);
 
-        for (int i = 0; i < buttons.Length; i++)
+        foreach (var t in buttons)
         {
-            if (i < levelsOpened)
-            {
-                buttons[i].interactable = true;
-            }
-            else
-            {
-                buttons[i].interactable = false;
-            }
+            t.interactable = false;
+        }
+        for ( int i = 0; i < levelsOpened; i++)
+        {
+            buttons[i].interactable = true;
         }
     }
+    
 
     public void LoadLevel(int levelIndex)
     {
