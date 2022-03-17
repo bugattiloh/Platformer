@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Hero : MonoBehaviour
 {
@@ -39,6 +40,10 @@ public class Hero : MonoBehaviour
 
     private void Update()
     {
+        if (CheckFall())
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         if (_isGrounded)
         {
             State = States.Idle;
@@ -93,6 +98,16 @@ public class Hero : MonoBehaviour
     private bool ShouldFlipX(Vector3 direction)
     {
         if (direction.x < 0.0f)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool CheckFall()
+    {
+        if (_rigidBody.position.y < -40)
         {
             return true;
         }
