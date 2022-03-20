@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MaceScript : MonoBehaviour
 {
-    [SerializeField] private float speed = 3f;
-    private bool _isUpMoving;
-   
+    [SerializeField] private float speed = 1000f;
+    private bool _isUpMoving = false;
 
 
     private void Move()
@@ -34,10 +33,12 @@ public class MaceScript : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
         if (collision.CompareTag("Ground"))
         {
             _isUpMoving = true;
         }
+
         if (collision.CompareTag("Point"))
         {
             _isUpMoving = false;
