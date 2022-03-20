@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-public class FinishingDoorScript : MonoBehaviour
+public class FinishDoorScript : MonoBehaviour
 {
     public void OnTriggerEnter2D(Collider2D collision)
     {

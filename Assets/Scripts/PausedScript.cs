@@ -10,7 +10,7 @@ public class PausedScript : MonoBehaviour
         pause.SetActive(false);
     }
 
-    private void PausedOff()
+    public void PausedOff()
     {
         pause.SetActive(false);
         Time.timeScale = 1;
@@ -22,7 +22,7 @@ public class PausedScript : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale.Equals(1))
         {
