@@ -5,7 +5,7 @@ public class PausedScript : MonoBehaviour
 {
     [SerializeField] private GameObject pause;
 
-    void Start()
+    private void Start()
     {
         pause.SetActive(false);
     }

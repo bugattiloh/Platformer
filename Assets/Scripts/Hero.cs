@@ -97,21 +97,11 @@ public class Hero : MonoBehaviour
 
     private bool ShouldFlipX(Vector3 direction)
     {
-        if (direction.x < 0.0f)
-        {
-            return true;
-        }
-
-        return false;
+        return direction.x < 0.0f;
     }
 
     private bool CheckFall()
     {
-        if (_rigidBody.position.y < -40)
-        {
-            return true;
-        }
-
-        return false;
+        return _rigidBody.position.y < -40;
     }
 }

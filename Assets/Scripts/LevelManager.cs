@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -12,7 +8,7 @@ public class LevelManager : MonoBehaviour
 
     public Button[] buttons;
 
-    void Start()
+    private void Start()
     {
         levelsOpened = PlayerPrefs.GetInt("levels", 1);
 
