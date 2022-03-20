@@ -20,12 +20,13 @@ public class LevelManager : MonoBehaviour
         {
             t.interactable = false;
         }
-        for ( int i = 0; i < levelsOpened; i++)
+
+        for (var i = 0; i < levelsOpened; i++)
         {
             buttons[i].interactable = true;
         }
     }
-    
+
 
     public void LoadLevel(int levelIndex)
     {
@@ -35,5 +36,15 @@ public class LevelManager : MonoBehaviour
     public void BackToMainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    protected static void UnlockNextLevel()
+    {
+        var currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentLevel >= PlayerPrefs.GetInt("levels"))
+        {
+            PlayerPrefs.SetInt("levels", currentLevel + 1);
+        }
     }
 }
