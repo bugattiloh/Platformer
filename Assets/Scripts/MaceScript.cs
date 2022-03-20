@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MaceScript : MonoBehaviour
+public class MaceScript : Enemy
 {
-    [SerializeField] private float speed = 1000f;
-    private bool _isUpMoving = false;
+    [SerializeField] private float speed = 3f;
+    private bool _isUpMoving;
 
 
     private void Move()
@@ -31,7 +31,7 @@ public class MaceScript : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            KillHeroAndRestartLevel();
         }
 
         if (collision.CompareTag("Ground"))
