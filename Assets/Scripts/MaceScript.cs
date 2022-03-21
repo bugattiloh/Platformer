@@ -19,8 +19,8 @@ public class MaceScript : Enemy
             direction = -transform.up * speed;
         }
 
-        Vector3 currentPos = transform.position;
-        Vector3 targetPos = currentPos + direction;
+        var currentPos = transform.position;
+        var targetPos = currentPos + direction;
 
         transform.position = Vector3.MoveTowards(currentPos, targetPos, speed * Time.deltaTime);
     }

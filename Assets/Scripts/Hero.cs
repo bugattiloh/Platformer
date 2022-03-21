@@ -15,7 +15,7 @@ public class Hero : MonoBehaviour
     public Transform GroundCheck;
     public float checkRadius = 0.15f;
     public LayerMask Ground;
-    private static readonly int State1 = Animator.StringToHash("state");
+    
 
 
     private enum States
@@ -28,7 +28,7 @@ public class Hero : MonoBehaviour
 
     private States State
     {
-        set => _animator.SetInteger(State1, (int) value);
+        set => _animator.SetInteger("state", (int) value);
     }
 
 
@@ -68,9 +68,9 @@ public class Hero : MonoBehaviour
 
     private void Run()
     {
-        Vector3 direction = transform.right * Input.GetAxis("Horizontal");
-        Vector3 currentPos = transform.position;
-        Vector3 targetPos = currentPos + direction;
+        var direction = transform.right * Input.GetAxis("Horizontal");
+        var currentPos = transform.position;
+        var targetPos = currentPos + direction;
 
         _spriteRenderer.flipX = ShouldFlipX(direction);
         if (_isGrounded)
