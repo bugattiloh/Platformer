@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SawScript : Enemy
@@ -11,7 +8,7 @@ public class SawScript : Enemy
     private bool _isRightDirection= true;
 
 
-    private void Rotate()
+    protected void Rotate()
     {
         transform.Rotate(0, 0, rotateSpeed);
     }
