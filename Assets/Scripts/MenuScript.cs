@@ -3,19 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+    
     public void StartGame()
-    {
-        SceneManager.LoadScene(2);
+    { 
+        SceneManager.LoadScene("Level1");
     }
 
     public void ToLevelsMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("LevelScene");
     }
 
 
     public void QuitGame()
     {
         Application.Quit();
+        //временная строка для проверки игры
+        PlayerPrefs.SetInt("levels", 1);
     }
 }

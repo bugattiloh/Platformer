@@ -12,9 +12,9 @@ public class LevelManager : MonoBehaviour
     {
         levelsOpened = PlayerPrefs.GetInt("levels", 1);
 
-        foreach (var t in buttons)
+        foreach (var button in buttons)
         {
-            t.interactable = false;
+            button.interactable = false;
         }
 
         for (var i = 0; i < levelsOpened; i++)
@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 
     protected static void UnlockNextLevel()
