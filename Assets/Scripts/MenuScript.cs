@@ -18,7 +18,6 @@ public class MenuScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        //временная строка для проверки игры
-        PlayerPrefs.SetInt("levels", 1);
+        PlayerPrefs.SetInt("levels", 1);//временная строка для проверки игры
     }
 }
