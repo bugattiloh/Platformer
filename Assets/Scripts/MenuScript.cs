@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    
+
     public void StartGame()
     { 
         SceneManager.LoadScene("Level1");
@@ -13,7 +13,9 @@ public class MenuScript : MonoBehaviour
     {
         SceneManager.LoadScene("LevelScene");
     }
+    
 
+    
 
     public void QuitGame()
     {
