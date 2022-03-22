@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
     public int levelsOpened;
 
     public Button[] buttons;
+    
 
     private void Start()
     {
@@ -34,7 +35,7 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    protected static void UnlockNextLevel()
+    protected void UnlockNextLevel()
     {
         var currentLevel = SceneManager.GetActiveScene().buildIndex;
 

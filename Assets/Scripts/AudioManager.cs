@@ -7,9 +7,19 @@ public class AudioManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
+    private static AudioManager _instance;
+
     private void Awake()
     {
-        DontDestroyOnLoad(audioMixer);
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     public void SetVolume(float volume)

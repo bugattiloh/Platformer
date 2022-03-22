@@ -3,9 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-
     public void StartGame()
-    { 
+    {
         SceneManager.LoadScene("Level1");
     }
 
@@ -13,13 +12,13 @@ public class MenuScript : MonoBehaviour
     {
         SceneManager.LoadScene("LevelScene");
     }
-    
 
-    
 
     public void QuitGame()
     {
         Application.Quit();
-        PlayerPrefs.SetInt("levels", 1);//временная строка для проверки игры
+        //временные строки для проверки игры
+        PlayerPrefs.SetInt("levels", 1);
+        PlayerPrefs.SetInt("Coins", 0);
     }
 }

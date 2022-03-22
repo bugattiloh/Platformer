@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class Hero : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float jumpForce = 15f;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpForce;
 
     private bool _isGrounded;
 
@@ -15,8 +15,6 @@ public class Hero : MonoBehaviour
     public Transform GroundCheck;
     public float checkRadius = 0.15f;
     public LayerMask Ground;
-    
-
 
     private enum States
     {
@@ -45,6 +43,7 @@ public class Hero : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
         if (_isGrounded)
         {
             State = States.Idle;
@@ -96,7 +95,7 @@ public class Hero : MonoBehaviour
     }
 
 
-    private bool ShouldFlipX(Vector3 direction)
+    private static bool ShouldFlipX(Vector3 direction)
     {
         return direction.x < 0.0f;
     }
