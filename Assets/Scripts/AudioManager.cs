@@ -1,14 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class OptionMenuScript : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
- 
+
     private void Awake()
     {
         DontDestroyOnLoad(audioMixer);
     }
+
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", Mathf.Log10(volume) * 20);
