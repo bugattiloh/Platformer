@@ -4,7 +4,11 @@ using UnityEngine.Audio;
 public class OptionMenuScript : MonoBehaviour
 {
     public AudioMixer audioMixer;
-
+ 
+    private void Awake()
+    {
+        DontDestroyOnLoad(audioMixer);
+    }
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", Mathf.Log10(volume) * 20);
