@@ -385,7 +385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101484381}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.88, y: -4.19, z: 0}
+  m_LocalPosition: {x: 21.18, y: -4.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 945671302}
@@ -1432,7 +1432,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -3248,7 +3248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2795430971002395279, guid: 9fcf3d639a51ead43a521d2b9cf94a32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.66
+      value: 23.18
       objectReference: {fileID: 0}
     - target: {fileID: 2795430971002395279, guid: 9fcf3d639a51ead43a521d2b9cf94a32, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3690,10 +3690,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 3383127297854258705, guid: 4fcc7e9964640be4d8a50cc5844ddcc8, type: 3}
-      propertyPath: m_PixelPerfect
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3383127297854258706, guid: 4fcc7e9964640be4d8a50cc5844ddcc8, type: 3}
       propertyPath: m_Name
       value: UI
@@ -3786,22 +3782,6 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1690062232}
-    - target: {fileID: 3712576708523462454, guid: 4fcc7e9964640be4d8a50cc5844ddcc8, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Sound
-      objectReference: {fileID: 0}
-    - target: {fileID: 3712576708523462454, guid: 4fcc7e9964640be4d8a50cc5844ddcc8, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: AudioManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5579351858645392482, guid: 4fcc7e9964640be4d8a50cc5844ddcc8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8179176245598712275, guid: 4fcc7e9964640be4d8a50cc5844ddcc8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fcc7e9964640be4d8a50cc5844ddcc8, type: 3}
 --- !u!1001 &4766182709548058013
@@ -3874,7 +3854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5333990906399077977, guid: 3efd5a07ffac3db4eae67e182d50bd0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.52
+      value: 16.5
       objectReference: {fileID: 0}
     - target: {fileID: 5333990906399077977, guid: 3efd5a07ffac3db4eae67e182d50bd0a, type: 3}
       propertyPath: m_LocalPosition.y

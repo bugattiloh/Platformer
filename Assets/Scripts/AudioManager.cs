@@ -11,15 +11,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            _instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        SaveMusicPlay();
     }
 
     public void SetVolume(float volume)
@@ -30,5 +22,18 @@ public class AudioManager : MonoBehaviour
     public void Sound()
     {
         AudioListener.pause = !AudioListener.pause;
+    }
+    
+    public void SaveMusicPlay()
+    {
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

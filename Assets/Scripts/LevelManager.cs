@@ -44,4 +44,5 @@ public class LevelManager : MonoBehaviour
             PlayerPrefs.SetInt("levels", currentLevel + 1);
         }
     }
+    
 }
