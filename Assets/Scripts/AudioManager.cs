@@ -1,17 +1,27 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using Random = System.Random;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance => _instance;
+    private static AudioManager _instance;
+
     public AudioMixer audioMixer;
 
-    private static AudioManager _instance;
+    private AudioSource player;
+
+    public List<AudioClip> tracks;
+
+    Random random = new Random(DateTime.Now.Millisecond);
 
     private void Awake()
     {
+        player = GetComponent<AudioSource>();
         SaveMusicPlay();
+        NextTrack();
     }
 
     public void SetVolume(float volume)
@@ -23,8 +33,8 @@ public class AudioManager : MonoBehaviour
     {
         AudioListener.pause = !AudioListener.pause;
     }
-    
-    public void SaveMusicPlay()
+
+    private void SaveMusicPlay()
     {
         if (_instance != null)
         {
@@ -35,5 +45,20 @@ public class AudioManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            NextTrack();
+        }
+    }
+
+    private void NextTrack()
+    {
+        player.Stop();
+        player.clip = tracks[random.Next(0, tracks.Count)];
+        player.Play();
     }
 }
