@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OptionsController : MonoBehaviour
+public class OptionsManager : MonoBehaviour
 {
     // TODO: Add toggle and slider + set initial values on start
     public void SetVolume(float volume)

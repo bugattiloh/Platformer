@@ -24,7 +24,7 @@ public class PausedScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && Time.timeScale.Equals(1))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             PausedOn();
         }
