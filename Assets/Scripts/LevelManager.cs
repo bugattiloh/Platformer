@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    protected void UnlockNextLevel()
+    protected static void UnlockNextLevel()
     {
         var currentLevel = SceneManager.GetActiveScene().buildIndex;
 

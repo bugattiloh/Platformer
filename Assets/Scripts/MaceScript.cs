@@ -32,14 +32,10 @@ public class MaceScript : Enemy
             KillHeroAndRestartLevel();
         }
 
-        if (collision.CompareTag("Ground"))
-        {
-            _isUpMoving = true;
-        }
 
-        if (collision.CompareTag("Point"))
+        if (collision.CompareTag("Point") || collision.CompareTag("Ground"))
         {
-            _isUpMoving = false;
+            _isUpMoving = !_isUpMoving;
         }
     }
 
