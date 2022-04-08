@@ -6577,7 +6577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cdfcc99f38434c449412017860c5d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinManager: {fileID: 1610025918}
+  coinManager: {fileID: 1610025918}
 --- !u!1001 &994875608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7900,7 +7900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cdfcc99f38434c449412017860c5d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinManager: {fileID: 1610025918}
+  coinManager: {fileID: 1610025918}
 --- !u!1 &1251730524
 GameObject:
   m_ObjectHideFlags: 0
@@ -8000,7 +8000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cdfcc99f38434c449412017860c5d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinManager: {fileID: 1610025918}
+  coinManager: {fileID: 1610025918}
 --- !u!1 &1264545730
 GameObject:
   m_ObjectHideFlags: 0

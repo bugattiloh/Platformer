@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class Coin : MonoBehaviour
 {
-    public CoinManager CoinManager;
+    public CoinManager coinManager;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Player")) return;
-        CoinManager.AddCoin();
+        coinManager.AddCoin();
         Destroy(gameObject);
     }
 }
