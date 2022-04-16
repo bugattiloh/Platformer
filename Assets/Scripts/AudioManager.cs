@@ -11,15 +11,16 @@ public class AudioManager : MonoBehaviour
 
     public AudioMixer audioMixer;
 
-    private AudioSource player;
+    private AudioSource _player;
 
     public List<AudioClip> tracks;
+    
 
-    Random random = new Random(DateTime.Now.Millisecond);
+    private readonly Random _random = new Random(DateTime.Now.Millisecond);
 
     private void Awake()
     {
-        player = GetComponent<AudioSource>();
+        _player = GetComponent<AudioSource>();
         SaveMusicPlay();
         NextTrack();
     }
@@ -27,6 +28,7 @@ public class AudioManager : MonoBehaviour
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", Mathf.Log10(volume) * 20);
+        
     }
 
     public void Sound()
@@ -57,8 +59,8 @@ public class AudioManager : MonoBehaviour
 
     private void NextTrack()
     {
-        player.Stop();
-        player.clip = tracks[random.Next(0, tracks.Count)];
-        player.Play();
+        _player.Stop();
+        _player.clip = tracks[_random.Next(0, tracks.Count)];
+        _player.Play();
     }
 }
