@@ -6,9 +6,9 @@ using UnityEngine;
 public class HorizontalPlatform : MonoBehaviour
 {
     [SerializeField] private float speed;
-    
 
-    private bool _isRightDirection =true;
+
+    private bool _isRightDirection = true;
     private bool _canMove;
 
     public void OnTriggerEnter2D(Collider2D collision)
