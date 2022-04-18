@@ -7,6 +7,7 @@ public class Hero : MonoBehaviour
     [SerializeField] private float jumpForce;
 
     private bool _isGrounded;
+    private bool _godMode = false;
 
     private Rigidbody2D _rigidBody;
     private SpriteRenderer _spriteRenderer;
@@ -58,6 +59,11 @@ public class Hero : MonoBehaviour
         {
             Jump();
         }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GodModeSwitch();
+        }
     }
 
     private void FixedUpdate()
@@ -103,5 +109,19 @@ public class Hero : MonoBehaviour
     private bool CheckFall()
     {
         return _rigidBody.position.y < -40;
+    }
+
+    private void GodModeSwitch()
+    {
+        if (!_godMode)
+        {
+            transform.gameObject.tag = "Untagged";
+        }
+        else
+        {
+            transform.gameObject.tag = "Player";
+        }
+
+        _godMode = !_godMode;
     }
 }
