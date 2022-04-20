@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class SpikeScript : Enemy
+public class Spike : Enemy
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {

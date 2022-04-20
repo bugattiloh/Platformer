@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StaticSawScript : SawScript
+public class StaticSaw : Saw
 {
     private void FixedUpdate()
     {

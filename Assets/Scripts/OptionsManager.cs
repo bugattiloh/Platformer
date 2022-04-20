@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OptionsManager : MonoBehaviour
 {
-    // TODO: Add toggle and slider + set initial values on start
-    public void Awake()
+    public Toggle toggle;
+
+    private void Awake()
     {
     }
 

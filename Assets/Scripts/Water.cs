@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WaterScript : Enemy
+public class Water : Enemy
 {   
     private void OnTriggerEnter2D(Collider2D collision)
         {

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class MaceScript : Enemy
+public class Mace : Enemy
 {
     [SerializeField] private float speed = 3f;
     private bool _isUpMoving;

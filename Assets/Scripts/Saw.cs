@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SawScript : Enemy
+public class Saw : Enemy
 {
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float speed;

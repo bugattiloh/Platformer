@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraScript : MonoBehaviour {
+public class Camera : MonoBehaviour {
 
     public float damping = 1f;
     public Vector2 offset = new Vector2(2f, 1f);

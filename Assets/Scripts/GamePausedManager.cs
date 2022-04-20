@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PausedScript : MonoBehaviour
+public class GamePausedManager : MonoBehaviour
 {
     [SerializeField] private GameObject pause;
 

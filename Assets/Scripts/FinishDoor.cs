@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class FinishDoorScript : LevelManager
+public class FinishDoor : LevelManager
 {
     public CoinManager coinManager;
     public void OnTriggerEnter2D(Collider2D collision)

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 using Random = System.Random;
 
 public class AudioManager : MonoBehaviour
@@ -14,6 +15,9 @@ public class AudioManager : MonoBehaviour
     private AudioSource _player;
 
     public List<AudioClip> tracks;
+    
+    public bool isMusicOn = true;
+    public float volumeNow = Mathf.Log10(1) * 20;
     
 
     private readonly Random _random = new Random(DateTime.Now.Millisecond);
@@ -34,6 +38,7 @@ public class AudioManager : MonoBehaviour
     public void Sound()
     {
         AudioListener.pause = !AudioListener.pause;
+        isMusicOn = !isMusicOn;
     }
 
     private void SaveMusicPlay()
